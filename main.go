@@ -23,7 +23,7 @@ func initDB() {
 	fmt.Println("Connected to the database!")
 }
 
-func main() {
+func main2() {
 	
 	initDB()
 	
@@ -181,3 +181,4 @@ func exportToExcelFun(filePath string) error {
 
     return nil
 }
+
