@@ -37,7 +37,9 @@ func main() {
 	
     pdf.AddPage()
 	pdf.Line(20, 40, 570, 40)
-    pdf.SetY(50)
+    pdf.SetY(70)
+	pdf.SetFontSize(20)
+	pdf.SetTextColor(1,2,1)
     pdf.Text("Ilkinji owrenmeli zatlar")
 	pdf.Rotate(0, 0, 0)
 	pdf.Image("../img.jpeg", 10, 110, nil)
