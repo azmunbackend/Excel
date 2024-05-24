@@ -13,22 +13,15 @@ func main() {
     // You can get an API key at https://pdfshift.io
     apiKey := "sk_3c03755c6e2e9b6f453b3151a445006e5bae4f80"
 
-    params := map[string]interface{}{
-        "source":            
-    `
-        <!DOCTYPE html>
-         <html lang="en">
-          <head>
-            <meta charset="UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>Document</title>
-          </head>
-          <body>
-            <h1>send me your iphone :)</h1>
-          </body>
-        </html>
-    `,
-    }
+
+    html, err := ioutil.ReadFile("index.html")
+	if err != nil {
+		fmt.Println("errr read index.html:", err)
+		return
+	}
+	params := map[string]interface{}{
+		"source": string(html),
+	}
 
     jsonParams, err := json.Marshal(params)
     if err != nil {
